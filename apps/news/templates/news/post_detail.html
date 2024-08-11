@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  <div class="post-detail">
+    <h2>{{ post.title }}</h2>
+    {% if post.picture %}
+      <img src="{{ post.picture.url }}" alt="{{ post.title }}" class="post-detail-img">
+    {% endif %}
+    <p>{{ post.content }}</p>
+    <p><strong>Опубликовал:</strong> {{ post.author }}</p>
+    <p><strong>Дата публикации:</strong> {{ post.publication_time }}</p>
+
+    <section class="comments-section">
+      <h3>Комментарии</h3>
+      <ul>
+        {% for comment in comments %}
+          <li class="comment-item">
+            <p class="comment-author"><strong></strong> {{ comment.author }}</p>
+            <p class="comment-content">{{ comment.content }}</p>
+            <p class="comment-date"><strong></strong> {{ comment.publication_time }}</p>
+          </li>
+        {% empty %}
+          <p>Нет комментариев.</p>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="comment-form">
+      <h3>Добавить комментарий</h3>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+    
+    <a href="{% url 'post_list' %}" class="back-link">Назад</a>
+  </div>
+{% endblock %}

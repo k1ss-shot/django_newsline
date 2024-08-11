@@ -1,0 +1,287 @@
+/* Общие стили для страницы */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Позволяет основному контенту занимать доступное пространство */
+}
+
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Стили для страницы списка постов */
+.posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.post-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px); /* Ширина карточки с учетом отступов */
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden; /* Скрытие части изображения, если оно не влезает в карточку */
+}
+
+.post-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-image {
+    width: 100%; /* Ширина изображения должна быть равна ширине карточки */
+    height: 200px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Обрезка изображения, чтобы оно заполнило контейнер */
+    border-radius: 4px; /* Скругление углов изображения */
+    margin-bottom: 10px; /* Отступ снизу изображения */
+}
+
+.post-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.post-card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Медиазапросы для адаптивности */
+@media screen and (max-width: 1200px) {
+    .post-card {
+        width: calc(33.33% - 20px); /* Три поста в ряду */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .post-card {
+        width: calc(50% - 20px); /* Два поста в ряду */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .post-card {
+        width: 100%; /* Один пост в ряду */
+    }
+}
+
+
+/* Стили для страницы деталей поста */
+/* Стили для страницы деталей поста */
+.post-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post-detail h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.post-detail-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.post-detail p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.comments-section {
+    margin-top: 30px;
+}
+
+.comments-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.comment-content {
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.comment-author,
+.comment-date {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.comment-author strong,
+.comment-date strong {
+    color: #333;
+}
+
+.comment-form {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.comment-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.comment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #555;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Стили для навбара */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.navbar-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+.navbar-logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    background-color: #555;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar-link:hover {
+    background-color: #777;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .alert {
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
