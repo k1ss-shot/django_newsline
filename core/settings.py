@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.news',
     'rest_framework',
-    'apps.api',
 ]
 
 MIDDLEWARE = [

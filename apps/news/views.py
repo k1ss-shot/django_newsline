@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic.edit import FormView
 from django.views.generic import ListView
-from apps.news.models import Post, Comment
+from apps.news.models import Post
 from apps.news.forms import CommentForm
 
 
